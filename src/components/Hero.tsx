@@ -3,7 +3,7 @@
 import { ArrowRight, MessageSquare, Zap } from "lucide-react"
 import { Button } from "./ui/button"
 
-const Hero = () => {
+export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Background Elements */}
@@ -91,5 +91,3 @@ const Hero = () => {
     </section>
   )
 }
-
-export default Hero

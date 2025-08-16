@@ -3,7 +3,7 @@
 import { BarChart3, Clock, MessageSquare, Shield, Workflow, Zap } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
-const Services = () => {
+export function Services() {
   const services = [
     {
       id: "whatsapp",
@@ -163,5 +163,3 @@ const Services = () => {
     </section>
   )
 }
-
-export default Services

@@ -4,7 +4,7 @@ import { Menu, MessageSquare, X } from "lucide-react"
 import { useState } from "react"
 import { Button } from "./ui/button"
 
-const Header = () => {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
@@ -92,5 +92,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header

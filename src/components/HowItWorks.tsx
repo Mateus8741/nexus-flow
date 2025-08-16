@@ -3,7 +3,7 @@
 import { ArrowRight, BarChart3, CheckCircle, MessageSquare, Workflow, Zap } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
-const HowItWorks = () => {
+export function HowItWorks() {
   const steps = [
     {
       id: "setup",
@@ -168,5 +168,3 @@ const HowItWorks = () => {
     </section>
   )
 }
-
-export default HowItWorks

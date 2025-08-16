@@ -11,7 +11,7 @@ import {
   Twitter,
 } from "lucide-react"
 
-const Footer = () => {
+export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
@@ -212,5 +212,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer

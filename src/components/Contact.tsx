@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 
-const Contact = () => {
+export function Contact() {
   return (
     <section className="py-32 bg-white">
       <div className="container mx-auto px-6">
@@ -177,5 +177,3 @@ const Contact = () => {
     </section>
   )
 }
-
-export default Contact
