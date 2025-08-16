@@ -43,21 +43,21 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gradient-to-b from-background to-secondary/20 border-t border-border/50">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <div className="container mx-auto px-6 py-20">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center mr-3">
-                <MessageSquare className="w-6 h-6 text-white" />
+            <div className="flex items-center mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
+                <MessageSquare className="w-7 h-7 text-white" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
                 NexusFlow
               </span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
               Transformamos seu WhatsApp em uma máquina de vendas 24/7 com IA e automação
               inteligente. Venda mais, trabalhe menos.
             </p>
@@ -66,10 +66,10 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors"
+                  className="w-12 h-12 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center hover:bg-gradient-to-br hover:from-violet-500 hover:to-blue-500 hover:text-white transition-all duration-300 transform hover:scale-110"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-6 h-6" />
                 </a>
               ))}
             </div>
@@ -77,13 +77,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Serviços</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-xl mb-8 text-white">Serviços</h3>
+            <ul className="space-y-4">
               {footerLinks.servicos.map(link => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors"
+                    className="text-gray-300 hover:text-violet-400 transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -94,13 +94,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Empresa</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-xl mb-8 text-white">Empresa</h3>
+            <ul className="space-y-4">
               {footerLinks.empresa.map(link => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors"
+                    className="text-gray-300 hover:text-violet-400 transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -111,13 +111,13 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Suporte</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-xl mb-8 text-white">Suporte</h3>
+            <ul className="space-y-4">
               {footerLinks.suporte.map(link => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors"
+                    className="text-gray-300 hover:text-violet-400 transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -128,60 +128,80 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="grid md:grid-cols-3 gap-8 py-8 border-t border-white/20 mb-8">
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center mr-3">
-              <Phone className="w-5 h-5 text-white" />
+        <div className="grid md:grid-cols-3 gap-8 py-12 border-t border-white/10 mb-12">
+          <div className="flex items-center group">
+            <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-blue-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+              <Phone className="w-7 h-7 text-white" />
             </div>
             <div>
-              <p className="font-medium text-white">Telefone</p>
+              <p className="font-semibold text-white text-lg">Telefone</p>
               <p className="text-gray-300">+55 (11) 99999-9999</p>
             </div>
           </div>
 
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center mr-3">
-              <Mail className="w-5 h-5 text-white" />
+          <div className="flex items-center group">
+            <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+              <Mail className="w-7 h-7 text-white" />
             </div>
             <div>
-              <p className="font-medium text-white">Email</p>
+              <p className="font-semibold text-white text-lg">Email</p>
               <p className="text-gray-300">contato@nexusflow.com</p>
             </div>
           </div>
 
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center mr-3">
-              <MapPin className="w-5 h-5 text-white" />
+          <div className="flex items-center group">
+            <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+              <MapPin className="w-7 h-7 text-white" />
             </div>
             <div>
-              <p className="font-medium text-white">Localização</p>
+              <p className="font-semibold text-white text-lg">Localização</p>
               <p className="text-gray-300">São Paulo, SP - Brasil</p>
             </div>
           </div>
         </div>
 
+        {/* Newsletter */}
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-12 mb-12 border border-white/10">
+          <div className="text-center max-w-2xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-4">Fique por dentro das novidades</h3>
+            <p className="text-gray-300 text-lg mb-8">
+              Receba insights exclusivos sobre automação e crescimento de vendas
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Seu melhor email"
+                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-violet-500 transition-all duration-300"
+              />
+              <button className="px-8 py-4 bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105">
+                Inscrever
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Footer */}
-        <div className="pt-8 border-t border-white/20">
+        <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm">
               © {currentYear} NexusFlow. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex space-x-8 mt-4 md:mt-0">
               <a
                 href="/politica-privacidade"
-                className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-sm text-gray-400 hover:text-violet-400 transition-colors duration-300"
               >
                 Política de Privacidade
               </a>
               <a
                 href="/termos-uso"
-                className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-sm text-gray-400 hover:text-violet-400 transition-colors duration-300"
               >
                 Termos de Uso
               </a>
               <a
                 href="/cookies"
-                className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-sm text-gray-400 hover:text-violet-400 transition-colors duration-300"
               >
                 Cookies
               </a>
