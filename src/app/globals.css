@@ -10,19 +10,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 263 70% 50.4%;
+    --primary: 16 100% 50%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 263 70% 50.4%;
+    --accent: 16 100% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 263 70% 50.4%;
+    --ring: 16 100% 50%;
     --radius: 0.5rem;
   }
 
@@ -76,12 +76,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-violet-500 to-blue-500 rounded-full;
+    @apply bg-gradient-to-b from-[#FF4C00] to-orange-500 rounded-full;
     transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply from-violet-600 to-blue-600;
+    @apply from-[#FF4C00] to-orange-600;
     transform: scale(1.1);
   }
 
@@ -180,7 +180,7 @@
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent;
   }
 
   /* Smooth Transitions */
@@ -190,7 +190,7 @@
 
   /* Focus States */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-[#FF4C00] focus:ring-offset-2;
   }
 
   /* Scroll-triggered animations */

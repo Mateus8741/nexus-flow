@@ -5,13 +5,13 @@ import { Button } from "./ui/button"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-orange-50">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Floating Shapes */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-violet-100 to-blue-100 rounded-full blur-3xl opacity-60 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-100 to-violet-100 rounded-full blur-3xl opacity-60 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-violet-50 to-blue-50 rounded-full blur-3xl opacity-40 animate-pulse delay-500"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-[#FF4C00]/20 to-orange-100 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-orange-100 to-[#FF4C00]/20 rounded-full blur-3xl opacity-60 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[#FF4C00]/10 to-orange-50 rounded-full blur-3xl opacity-40 animate-pulse delay-500"></div>
       </div>
 
       {/* Grid Pattern */}
@@ -22,8 +22,8 @@ export function Hero() {
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-full px-8 py-4 mb-12 shadow-xl animate-fade-in">
-            <div className="w-3 h-3 bg-gradient-to-r from-violet-500 to-blue-500 rounded-full animate-pulse"></div>
-            <Zap className="w-5 h-5 text-violet-600" />
+            <div className="w-3 h-3 bg-gradient-to-r from-[#FF4C00] to-orange-500 rounded-full animate-pulse"></div>
+            <Zap className="w-5 h-5 text-[#FF4C00]" />
             <span className="text-base font-semibold text-gray-700">Automação Inteligente</span>
           </div>
 
@@ -31,7 +31,7 @@ export function Hero() {
           <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-slide-up leading-tight">
             <span className="text-gray-900">Automatize suas</span>
             <br />
-            <span className="bg-gradient-to-r from-violet-600 via-blue-600 to-violet-600 bg-clip-text text-transparent animate-gradient-x">
+            <span className="bg-gradient-to-r from-[#FF4C00] via-orange-500 to-[#FF4C00] bg-clip-text text-transparent animate-gradient-x">
               Vendas no WhatsApp
             </span>
           </h1>
@@ -47,7 +47,7 @@ export function Hero() {
             <Button
               variant="hero"
               size="lg"
-              className="bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white text-xl px-10 py-6 rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 group"
+              className="bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white text-xl px-10 py-6 rounded-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 group"
             >
               <MessageSquare className="w-6 h-6 mr-3" />
               Começar Agora
@@ -56,7 +56,7 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="text-xl px-10 py-6 rounded-2xl font-semibold border-2 border-gray-300 text-gray-700 hover:border-violet-600 hover:text-violet-600 hover:bg-violet-50 transition-all duration-300 transform hover:scale-105"
+              className="text-xl px-10 py-6 rounded-2xl font-semibold border-2 border-gray-300 text-gray-700 hover:border-[#FF4C00] hover:text-[#FF4C00] hover:bg-[#FF4C00]/5 transition-all duration-300 transform hover:scale-105"
             >
               Ver Como Funciona
             </Button>

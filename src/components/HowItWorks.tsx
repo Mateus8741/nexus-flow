@@ -21,7 +21,7 @@ export function HowItWorks() {
       description:
         "Desenvolvemos fluxos automatizados usando N8N para diferentes cenários de venda",
       details: ["Mapeamento de processos", "Configuração de triggers", "Automação de respostas"],
-      gradient: "from-blue-500 to-indigo-600",
+      gradient: "from-[#FF4C00] to-orange-500",
       number: "02",
     },
     {
@@ -30,7 +30,7 @@ export function HowItWorks() {
       title: "3. Integração com IA",
       description: "Implementamos inteligência artificial para qualificar leads e fechar vendas",
       details: ["Chatbot inteligente", "Qualificação automática", "Follow-up personalizado"],
-      gradient: "from-purple-500 to-violet-600",
+      gradient: "from-orange-500 to-red-500",
       number: "03",
     },
     {
@@ -39,7 +39,7 @@ export function HowItWorks() {
       title: "4. Lançamento e Monitoramento",
       description: "Ativamos o sistema e monitoramos o desempenho em tempo real",
       details: ["Testes finais", "Ativação gradual", "Dashboard de métricas"],
-      gradient: "from-orange-500 to-red-600",
+      gradient: "from-red-500 to-pink-500",
       number: "04",
     },
   ]
@@ -54,16 +54,16 @@ export function HowItWorks() {
   ]
 
   return (
-    <section className="py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="how-it-works" className="py-32 bg-gradient-to-br from-gray-50 to-orange-50">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-100 to-blue-100 rounded-full px-6 py-3 mb-8">
-            <span className="text-sm font-semibold text-violet-700">Como Funciona</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
+            <span className="text-sm font-semibold text-[#FF4C00]">Como Funciona</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
             Processo{" "}
-            <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent">
               Simples
             </span>
           </h2>
@@ -123,7 +123,7 @@ export function HowItWorks() {
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-6">
               Benefícios{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent">
                 Exclusivos
               </span>
             </h3>
@@ -136,13 +136,13 @@ export function HowItWorks() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.id}
-                className="flex items-center gap-4 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100/50 hover:from-violet-50 hover:to-blue-50 transition-all duration-300 group cursor-pointer"
+                className="flex items-center gap-4 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100/50 hover:from-[#FF4C00]/5 hover:to-orange-50 transition-all duration-300 group cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-lg font-semibold text-gray-800 group-hover:text-violet-700 transition-colors duration-300">
+                <span className="text-lg font-semibold text-gray-800 group-hover:text-[#FF4C00] transition-colors duration-300">
                   {benefit.text}
                 </span>
               </div>
@@ -151,14 +151,14 @@ export function HowItWorks() {
 
           {/* CTA Section */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-100 to-blue-100 rounded-full px-8 py-4 mb-8">
-              <Zap className="w-5 h-5 text-violet-600" />
-              <span className="text-lg font-semibold text-violet-700">Pronto para começar?</span>
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-8 py-4 mb-8">
+              <Zap className="w-5 h-5 text-[#FF4C00]" />
+              <span className="text-lg font-semibold text-[#FF4C00]">Pronto para começar?</span>
             </div>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Junte-se a centenas de empresas que já transformaram suas vendas com a NexusFlow
             </p>
-            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               Começar Agora
               <ArrowRight className="w-5 h-5" />
             </button>

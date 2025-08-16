@@ -17,8 +17,8 @@ export function Services() {
         "Respostas automáticas",
         "Catálogo integrado",
       ],
-      gradient: "from-green-500 to-blue-600",
-      bgGradient: "from-green-50 to-blue-50",
+      gradient: "from-green-500 to-emerald-600",
+      bgGradient: "from-green-50 to-emerald-50",
     },
     {
       id: "n8n",
@@ -32,8 +32,8 @@ export function Services() {
         "Triggers automáticos",
         "Lógica customizada",
       ],
-      gradient: "from-purple-500 to-pink-600",
-      bgGradient: "from-purple-50 to-pink-50",
+      gradient: "from-[#FF4C00] to-orange-500",
+      bgGradient: "from-[#FF4C00]/10 to-orange-50",
     },
     {
       id: "sales",
@@ -46,7 +46,7 @@ export function Services() {
         "Fechamento automático",
         "Relatórios detalhados",
       ],
-      gradient: "from-orange-500 to-red-600",
+      gradient: "from-orange-500 to-red-500",
       bgGradient: "from-orange-50 to-red-50",
     },
   ]
@@ -73,16 +73,16 @@ export function Services() {
   ]
 
   return (
-    <section className="py-32 bg-white">
+    <section id="services" className="py-32 bg-white">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-100 to-blue-100 rounded-full px-6 py-3 mb-8">
-            <span className="text-sm font-semibold text-violet-700">Nossos Serviços</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
+            <span className="text-sm font-semibold text-[#FF4C00]">Nossos Serviços</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
             Soluções{" "}
-            <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent">
               Completas
             </span>
           </h2>
@@ -129,11 +129,11 @@ export function Services() {
         </div>
 
         {/* Benefits Section */}
-        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-16">
-          <div className="text-center mb-16">
+        <div className="bg-gradient-to-br from-gray-50 to-orange-50 rounded-3xl p-16 shadow-xl">
+          <div className="text-center mb-16 animate-fade-in">
             <h3 className="text-4xl font-bold text-gray-900 mb-6">
               Por que escolher a{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent">
                 NexusFlow
               </span>
               ?
@@ -151,7 +151,7 @@ export function Services() {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="w-16 h-16 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                  <benefit.icon className="w-8 h-8 text-violet-600" />
+                  <benefit.icon className="w-8 h-8 text-[#FF4C00]" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h4>
                 <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
