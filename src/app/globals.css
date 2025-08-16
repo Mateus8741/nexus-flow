@@ -54,13 +54,21 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-white text-gray-900;
+    /* Melhorar performance de scroll */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
@@ -69,18 +77,27 @@
 
   ::-webkit-scrollbar-thumb {
     @apply bg-gradient-to-b from-violet-500 to-blue-500 rounded-full;
+    transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     @apply from-violet-600 to-blue-600;
+    transform: scale(1.1);
+  }
+
+  /* Smooth scroll para navegadores que não suportam scroll-behavior: smooth */
+  @supports not (scroll-behavior: smooth) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
 @layer utilities {
-  /* Custom Animations */
+  /* Custom Animations com easing melhorado */
   .animate-gradient-x {
     background-size: 200% 200%;
-    animation: gradient-x 3s ease infinite;
+    animation: gradient-x 3s ease-in-out infinite;
   }
 
   @keyframes gradient-x {
@@ -93,13 +110,13 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -108,13 +125,13 @@
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(60px);
     }
     to {
       opacity: 1;
@@ -123,13 +140,13 @@
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
+    animation: scaleIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   @keyframes scaleIn {
     from {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.85);
     }
     to {
       opacity: 1;
@@ -137,14 +154,21 @@
     }
   }
 
-  /* Hover Effects */
+  /* Animações de entrada com delays escalonados */
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+
+  /* Hover Effects com transições suaves */
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
   }
 
   /* Glass Effect */
@@ -161,11 +185,62 @@
 
   /* Smooth Transitions */
   .smooth-transition {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-500 ease-out;
   }
 
   /* Focus States */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2;
+  }
+
+  /* Scroll-triggered animations */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Parallax effect suave */
+  .parallax {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
+
+  /* Smooth hover transitions */
+  .hover-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Pulse suave */
+  .pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
 }
