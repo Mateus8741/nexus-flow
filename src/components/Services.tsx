@@ -1,9 +1,6 @@
 "use client"
 
 import { BarChart3, Clock, MessageSquare, Shield, Workflow, Zap } from "lucide-react"
-import n8nWorkflow from "../assets/n8n-workflow.jpg"
-import salesGrowth from "../assets/sales-growth.jpg"
-import whatsappAutomation from "../assets/whatsapp-automation.jpg"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 const Services = () => {
@@ -14,13 +11,14 @@ const Services = () => {
       title: "Automação WhatsApp",
       description:
         "Configure seu WhatsApp para vender automaticamente usando a API oficial do Meta",
-      image: whatsappAutomation.src,
       features: [
         "API Meta oficial",
         "WhatsApp Flows",
         "Respostas automáticas",
         "Catálogo integrado",
       ],
+      gradient: "from-green-500 to-blue-600",
+      bgGradient: "from-green-50 to-blue-50",
     },
     {
       id: "n8n",
@@ -28,26 +26,28 @@ const Services = () => {
       title: "Integração N8N",
       description:
         "Workflows inteligentes que conectam todos os seus sistemas de forma automatizada",
-      image: n8nWorkflow.src,
       features: [
         "Workflows visuais",
         "Integrações ilimitadas",
         "Triggers automáticos",
         "Lógica customizada",
       ],
+      gradient: "from-purple-500 to-pink-600",
+      bgGradient: "from-purple-50 to-pink-50",
     },
     {
       id: "sales",
       icon: BarChart3,
       title: "Vendas Inteligentes",
       description: "IA que qualifica leads, responde dúvidas e fecha vendas 24 horas por dia",
-      image: salesGrowth.src,
       features: [
         "IA conversacional",
         "Qualificação de leads",
         "Fechamento automático",
         "Relatórios detalhados",
       ],
+      gradient: "from-orange-500 to-red-600",
+      bgGradient: "from-orange-50 to-red-50",
     },
   ]
 
@@ -73,70 +73,91 @@ const Services = () => {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Nossos <span className="text-tech-blue">Serviços</span>
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-100 to-blue-100 rounded-full px-6 py-3 mb-8">
+            <span className="text-sm font-semibold text-violet-700">Nossos Serviços</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
+            Soluções{" "}
+            <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+              Completas
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Soluções completas de automação para transformar seu negócio digital
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Transformamos seu negócio digital com automação inteligente e tecnologia de ponta
           </p>
         </div>
 
-        {/* Main Services */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className="group hover:shadow-glow transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm border-border/50 animate-slide-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-gradient-to-br from-white to-gray-50/50 shadow-xl"
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <CardHeader className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+              <CardHeader className="text-center pb-6">
+                <div
+                  className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${service.gradient} rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500`}
+                >
+                  <service.icon className="w-10 h-10 text-white" />
                 </div>
-                <service.icon className="w-8 h-8 text-tech-blue mx-auto mb-4" />
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold text-gray-900 mb-3">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-lg leading-relaxed">
+                  {service.description}
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
+              <CardContent className="pt-0">
+                <div className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li
-                      key={`${service.id}-feature-${featureIndex}`}
-                      className="flex items-center text-sm text-muted-foreground"
-                    >
-                      <Zap className="w-4 h-4 text-tech-blue mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <div
+                        className={`w-2 h-2 bg-gradient-to-r ${service.gradient} rounded-full`}
+                      ></div>
+                      <span className="text-gray-700 font-medium">{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Benefits */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
-            <div
-              key={benefit.id}
-              className="text-center animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-2xl flex items-center justify-center">
-                <benefit.icon className="w-8 h-8 text-white" />
+        {/* Benefits Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-16">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-gray-900 mb-6">
+              Por que escolher a{" "}
+              <span className="bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
+                NexusFlow
+              </span>
+              ?
+            </h3>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Nossa plataforma oferece vantagens exclusivas que transformam seu negócio
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.id}
+                className="text-center group hover:scale-105 transition-all duration-300"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="w-16 h-16 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <benefit.icon className="w-8 h-8 text-violet-600" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h4>
+                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-muted-foreground">{benefit.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
