@@ -2,6 +2,7 @@
 
 import { Menu, MessageSquare, X } from "lucide-react"
 import { useState } from "react"
+import { Logo } from "./Logo"
 import { Button } from "./ui/button"
 
 export function Header() {
@@ -15,16 +16,11 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100/50">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-blue-600 rounded-2xl flex items-center justify-center mr-3 shadow-lg">
-              <MessageSquare className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
-              NexusFlow
-            </span>
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}
