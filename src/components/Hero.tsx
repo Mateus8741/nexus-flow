@@ -1,8 +1,8 @@
 "use client"
 
-import heroBg from "@/assets/hero-bg.jpg"
 import { MessageSquare, Zap } from "lucide-react"
 import Image from "next/image"
+import heroBg from "../assets/hero-bg.jpg"
 import { Button } from "./ui/button"
 
 const Hero = () => {
