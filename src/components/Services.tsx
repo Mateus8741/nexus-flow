@@ -75,7 +75,6 @@ export function Services() {
   return (
     <section id="services" className="py-32 bg-white">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
             <span className="text-sm font-semibold text-[#FF4C00]">Nossos Serviços</span>
@@ -91,7 +90,6 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {services.map((service, index) => (
             <Card
@@ -128,7 +126,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* Benefits Section */}
         <div className="bg-gradient-to-br from-gray-50 to-orange-50 rounded-3xl p-16 shadow-xl">
           <div className="text-center mb-16 animate-fade-in">
             <h3 className="text-4xl font-bold text-gray-900 mb-6">

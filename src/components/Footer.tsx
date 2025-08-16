@@ -45,9 +45,7 @@ export function Footer() {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       <div className="container mx-auto px-6 py-20">
-        {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-8">
               <div className="w-12 h-12 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
@@ -75,7 +73,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="font-bold text-xl mb-8 text-white">Serviços</h3>
             <ul className="space-y-4">
@@ -92,7 +89,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="font-bold text-xl mb-8 text-white">Empresa</h3>
             <ul className="space-y-4">
@@ -109,7 +105,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="font-bold text-xl mb-8 text-white">Suporte</h3>
             <ul className="space-y-4">
@@ -127,7 +122,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact Info */}
         <div className="grid md:grid-cols-3 gap-8 py-12 border-t border-white/10 mb-12">
           <div className="flex items-center group">
             <div className="w-14 h-14 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
@@ -160,7 +154,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
         <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-12 mb-12 border border-white/10">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-4">Fique por dentro das novidades</h3>
@@ -180,7 +173,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Footer */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">

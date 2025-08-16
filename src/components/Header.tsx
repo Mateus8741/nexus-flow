@@ -18,12 +18,10 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100/50">
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <div className="flex items-center">
             <Logo />
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-12">
             {menuItems.map(item => (
               <a
@@ -37,7 +35,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
           <div className="hidden md:flex">
             <Button
               variant="cta"
@@ -49,7 +46,6 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -59,7 +55,6 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-100 py-6 animate-fade-in">
             <nav className="flex flex-col space-y-4">

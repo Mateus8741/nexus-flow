@@ -60,13 +60,11 @@
 
   body {
     @apply bg-white text-gray-900;
-    /* Melhorar performance de scroll */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -85,7 +83,6 @@
     transform: scale(1.1);
   }
 
-  /* Smooth scroll para navegadores que não suportam scroll-behavior: smooth */
   @supports not (scroll-behavior: smooth) {
     html {
       scroll-behavior: auto;
@@ -94,7 +91,6 @@
 }
 
 @layer utilities {
-  /* Custom Animations com easing melhorado */
   .animate-gradient-x {
     background-size: 200% 200%;
     animation: gradient-x 3s ease-in-out infinite;
@@ -154,14 +150,12 @@
     }
   }
 
-  /* Animações de entrada com delays escalonados */
   .animate-stagger-1 { animation-delay: 0.1s; }
   .animate-stagger-2 { animation-delay: 0.2s; }
   .animate-stagger-3 { animation-delay: 0.3s; }
   .animate-stagger-4 { animation-delay: 0.4s; }
   .animate-stagger-5 { animation-delay: 0.5s; }
 
-  /* Hover Effects com transições suaves */
   .hover-lift {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -171,29 +165,24 @@
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
   }
 
-  /* Glass Effect */
   .glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Gradient Text */
   .gradient-text {
     @apply bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent;
   }
 
-  /* Smooth Transitions */
   .smooth-transition {
     @apply transition-all duration-500 ease-out;
   }
 
-  /* Focus States */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-[#FF4C00] focus:ring-offset-2;
   }
 
-  /* Scroll-triggered animations */
   .scroll-fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -205,18 +194,15 @@
     transform: translateY(0);
   }
 
-  /* Parallax effect suave */
   .parallax {
     transition: transform 0.1s ease-out;
     will-change: transform;
   }
 
-  /* Smooth hover transitions */
   .hover-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Floating animation */
   .float {
     animation: float 6s ease-in-out infinite;
   }
@@ -230,7 +216,6 @@
     }
   }
 
-  /* Pulse suave */
   .pulse-soft {
     animation: pulse-soft 3s ease-in-out infinite;
   }

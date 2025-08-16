@@ -10,7 +10,6 @@ export function Contact() {
   return (
     <section id="contact" className="py-32 bg-white">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
             <span className="text-sm font-semibold text-[#FF4C00]">Entre em Contato</span>
@@ -27,7 +26,6 @@ export function Contact() {
         </div>
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
           <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50/50">
             <CardHeader className="text-center pb-8">
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-3xl flex items-center justify-center shadow-xl">
@@ -107,9 +105,7 @@ export function Contact() {
             </CardContent>
           </Card>
 
-          {/* Contact Info & Stats */}
           <div className="space-y-8">
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-[#FF4C00]/10 to-orange-50 rounded-3xl p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
@@ -128,7 +124,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Contact Methods */}
             <div className="space-y-6">
               <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
@@ -161,7 +156,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Trust Badge */}
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 text-center border border-gray-200">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
                 <Shield className="w-8 h-8 text-white" />

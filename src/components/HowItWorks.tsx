@@ -56,7 +56,6 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-32 bg-gradient-to-br from-gray-50 to-orange-50">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
             <span className="text-sm font-semibold text-[#FF4C00]">Como Funciona</span>
@@ -72,25 +71,21 @@ export function HowItWorks() {
           </p>
         </div>
 
-        {/* Steps Timeline */}
         <div className="grid lg:grid-cols-4 gap-8 mb-24">
           {steps.map((step, index) => (
             <div key={step.id} className="relative group">
-              {/* Connection Line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-gray-300 to-gray-200 z-0"></div>
               )}
 
               <Card className="relative z-10 h-full group-hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 bg-white shadow-xl">
                 <CardHeader className="text-center pb-6">
-                  {/* Step Number */}
                   <div
                     className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-br ${step.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
                   >
                     <span className="text-2xl font-bold text-white">{step.number}</span>
                   </div>
 
-                  {/* Icon */}
                   <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex items-center justify-center group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
                     <step.icon className="w-10 h-10 text-gray-600" />
                   </div>
@@ -118,7 +113,6 @@ export function HowItWorks() {
           ))}
         </div>
 
-        {/* Benefits Grid */}
         <div className="bg-white rounded-3xl p-16 shadow-xl">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-6">
@@ -149,7 +143,6 @@ export function HowItWorks() {
             ))}
           </div>
 
-          {/* CTA Section */}
           <div className="text-center mt-16">
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-8 py-4 mb-8">
               <Zap className="w-5 h-5 text-[#FF4C00]" />
