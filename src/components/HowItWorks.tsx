@@ -1,7 +1,7 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, BarChart3, CheckCircle, MessageSquare, Workflow, Zap } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 const HowItWorks = () => {
   const steps = [

@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Menu, MessageSquare, X } from "lucide-react"
 import { useState } from "react"
+import { Button } from "./ui/button"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

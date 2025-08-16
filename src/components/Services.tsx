@@ -3,8 +3,8 @@
 import n8nWorkflow from "@/assets/n8n-workflow.jpg"
 import salesGrowth from "@/assets/sales-growth.jpg"
 import whatsappAutomation from "@/assets/whatsapp-automation.jpg"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BarChart3, Clock, MessageSquare, Shield, Workflow, Zap } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 const Services = () => {
   const services = [
