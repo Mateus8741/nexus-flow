@@ -27,10 +27,10 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#FF4C00] transition-all duration-300 font-medium text-lg relative group"
+                className="text-gray-700 hover:text-orange-brand transition-all duration-300 font-medium text-lg relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FF4C00] to-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-brand to-orange-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
@@ -39,7 +39,7 @@ export function Header() {
             <Button
               variant="cta"
               size="lg"
-              className="bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white px-8 py-3 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white px-8 py-3 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Falar Conosco
@@ -49,7 +49,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 text-gray-700 hover:text-[#FF4C00] transition-colors rounded-xl hover:bg-gray-50"
+            className="md:hidden p-3 text-gray-700 hover:text-orange-brand transition-colors rounded-xl hover:bg-gray-50"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -62,7 +62,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#FF4C00] transition-colors duration-200 font-medium py-3 px-4 rounded-xl hover:bg-gray-50"
+                  className="text-gray-700 hover:text-orange-brand transition-colors duration-200 font-medium py-3 px-4 rounded-xl hover:bg-gray-50"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -71,7 +71,7 @@ export function Header() {
               <Button
                 variant="cta"
                 size="lg"
-                className="mt-4 w-full bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white py-3 rounded-2xl font-semibold shadow-xl"
+                className="mt-4 w-full bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white py-3 rounded-2xl font-semibold shadow-xl"
               >
                 <MessageSquare className="w-5 h-5 mr-2" />
                 Falar Conosco

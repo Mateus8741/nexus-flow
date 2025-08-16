@@ -1,15 +1,7 @@
 "use client"
 
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  MessageSquare,
-  Phone,
-  Twitter,
-} from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import { LogoWhite } from "./LogoWhite"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -48,12 +40,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl">
-                <MessageSquare className="w-7 h-7 text-white" />
-              </div>
-              <span className="text-3xl font-bold bg-gradient-to-r from-[#FF4C00] to-orange-400 bg-clip-text text-transparent">
-                NexusFlow
-              </span>
+              <LogoWhite width={250} height={250} />
             </div>
             <p className="text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
               Transformamos seu WhatsApp em uma máquina de vendas 24/7 com IA e automação
@@ -64,7 +51,7 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-12 h-12 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center hover:bg-gradient-to-br hover:from-[#FF4C00] hover:to-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110"
+                  className="w-12 h-12 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-brand hover:to-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110"
                   aria-label={social.label}
                 >
                   <social.icon className="w-6 h-6" />
@@ -80,7 +67,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-[#FF4C00] transition-all duration-300 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-orange-brand transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -96,7 +83,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-[#FF4C00] transition-all duration-300 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-orange-brand transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -112,7 +99,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-[#FF4C00] transition-all duration-300 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-orange-brand transition-all duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -124,7 +111,7 @@ export function Footer() {
 
         <div className="grid md:grid-cols-3 gap-8 py-12 border-t border-white/10 mb-12">
           <div className="flex items-center group">
-            <div className="w-14 h-14 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+            <div className="w-14 h-14 bg-gradient-to-br from-orange-brand to-orange-500 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:shadow-2xl transition-all duration-300">
               <Phone className="w-7 h-7 text-white" />
             </div>
             <div>
@@ -139,7 +126,7 @@ export function Footer() {
             </div>
             <div>
               <p className="font-semibold text-white text-lg">Email</p>
-              <p className="text-gray-300">contato@nexusflow.com</p>
+              <p className="text-gray-300">contato@nexusflow.com.br</p>
             </div>
           </div>
 
@@ -149,7 +136,7 @@ export function Footer() {
             </div>
             <div>
               <p className="font-semibold text-white text-lg">Localização</p>
-              <p className="text-gray-300">São Paulo, SP - Brasil</p>
+              <p className="text-gray-300">Barbalha, CE - Brasil</p>
             </div>
           </div>
         </div>
@@ -164,9 +151,9 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Seu melhor email"
-                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#FF4C00] transition-all duration-300"
+                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-brand transition-all duration-300"
               />
-              <button className="px-8 py-4 bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105">
+              <button className="px-8 py-4 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105">
                 Inscrever
               </button>
             </div>
@@ -181,19 +168,19 @@ export function Footer() {
             <div className="flex space-x-8 mt-4 md:mt-0">
               <a
                 href="/politica-privacidade"
-                className="text-sm text-gray-400 hover:text-[#FF4C00] transition-colors duration-300"
+                className="text-sm text-gray-400 hover:text-orange-brand transition-colors duration-300"
               >
                 Política de Privacidade
               </a>
               <a
                 href="/termos-uso"
-                className="text-sm text-gray-400 hover:text-[#FF4C00] transition-colors duration-300"
+                className="text-sm text-gray-400 hover:text-orange-brand transition-colors duration-300"
               >
                 Termos de Uso
               </a>
               <a
                 href="/cookies"
-                className="text-sm text-gray-400 hover:text-[#FF4C00] transition-colors duration-300"
+                className="text-sm text-gray-400 hover:text-orange-brand transition-colors duration-300"
               >
                 Cookies
               </a>

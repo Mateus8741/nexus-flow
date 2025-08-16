@@ -11,12 +11,12 @@ export function Contact() {
     <section id="contact" className="py-32 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF4C00]/20 to-orange-100 rounded-full px-6 py-3 mb-8">
-            <span className="text-sm font-semibold text-[#FF4C00]">Entre em Contato</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-brand/20 to-orange-100 rounded-full px-6 py-3 mb-8">
+            <span className="text-sm font-semibold text-orange-brand">Entre em Contato</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
             Vamos{" "}
-            <span className="bg-gradient-to-r from-[#FF4C00] to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-brand to-orange-500 bg-clip-text text-transparent">
               Conversar
             </span>
           </h2>
@@ -28,7 +28,7 @@ export function Contact() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
           <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50/50">
             <CardHeader className="text-center pb-8">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-3xl flex items-center justify-center shadow-xl">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-brand to-orange-500 rounded-3xl flex items-center justify-center shadow-xl">
                 <Send className="w-10 h-10 text-white" />
               </div>
               <CardTitle className="text-3xl font-bold text-gray-900">
@@ -48,7 +48,7 @@ export function Contact() {
                   <Input
                     id="name"
                     placeholder="Seu nome completo"
-                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-[#FF4C00] focus:ring-0 transition-all duration-300 text-lg"
+                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -59,7 +59,7 @@ export function Contact() {
                     id="email"
                     type="email"
                     placeholder="seu@email.com"
-                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-[#FF4C00] focus:ring-0 transition-all duration-300 text-lg"
+                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
                 </div>
               </div>
@@ -72,7 +72,7 @@ export function Contact() {
                   <Input
                     id="phone"
                     placeholder="(11) 99999-9999"
-                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-[#FF4C00] focus:ring-0 transition-all duration-300 text-lg"
+                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
                 </div>
                 <div className="space-y-2">
@@ -82,7 +82,7 @@ export function Contact() {
                   <Input
                     id="company"
                     placeholder="Nome da sua empresa"
-                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-[#FF4C00] focus:ring-0 transition-all duration-300 text-lg"
+                    className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
                 </div>
               </div>
@@ -94,11 +94,11 @@ export function Contact() {
                 <Textarea
                   id="message"
                   placeholder="Conte-nos sobre seu negócio e como podemos ajudar a automatizar suas vendas..."
-                  className="min-h-32 border-2 border-gray-200 rounded-xl focus:border-[#FF4C00] focus:ring-0 transition-all duration-300 text-lg resize-none"
+                  className="min-h-32 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg resize-none"
                 />
               </div>
 
-              <Button className="w-full h-14 bg-gradient-to-r from-[#FF4C00] to-orange-500 hover:from-[#FF4C00] hover:to-orange-600 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <Button className="w-full h-14 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <Send className="w-5 h-5 mr-2" />
                 Enviar Mensagem
               </Button>
@@ -107,8 +107,8 @@ export function Contact() {
 
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-[#FF4C00]/10 to-orange-50 rounded-3xl p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="bg-gradient-to-br from-orange-brand/10 to-orange-50 rounded-3xl p-8 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-brand to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
@@ -126,7 +126,7 @@ export function Contact() {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-orange-brand to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
                   <Mail className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ export function Contact() {
             </div>
 
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 text-center border border-gray-200">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#FF4C00] to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-brand to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">100% Seguro</h4>
