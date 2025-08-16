@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-blue-900 opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-90" />
       </div>
 
       {/* Animated Background Elements */}
