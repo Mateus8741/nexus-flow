@@ -9,11 +9,11 @@ import {
   Package,
   Settings,
   ShoppingCart,
-  Sparkles,
   TrendingUp,
   Users,
 } from "lucide-react"
 import { useState } from "react"
+import { SymbolLogo } from "../SymbolLogo"
 import { Button } from "../ui/button"
 import { SidebarProvider, SidebarTrigger } from "../ui/sidebar"
 
@@ -93,6 +93,7 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="relative bg-background/80 backdrop-blur-xl border-r border-white/10 flex-shrink-0"
         >
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,12 +106,17 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="flex items-center gap-3"
             >
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 text-white" />
+              {isOpen ? (
+                <SymbolLogo width={40} height={40} />
+              ) : (
+                <div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center">
+                    <div className="w-6 h-6 bg-gradient-to-br from-white to-white/80 rounded-lg" />
+                  </div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-primary to-primary/60 rounded-xl blur opacity-30 animate-pulse" />
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary to-primary/60 rounded-xl blur opacity-30 animate-pulse" />
-              </div>
+              )}
+
               {isOpen && (
                 <motion.div
                   initial={{ opacity: 0, width: 0 }}
