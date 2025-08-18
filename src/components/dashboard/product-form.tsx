@@ -176,17 +176,14 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                   <Label htmlFor={nameId} className="text-sm font-medium text-foreground/80">
                     Nome do Produto *
                   </Label>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Input
-                      id={nameId}
-                      {...register("name")}
-                      placeholder="Digite o nome do produto"
-                      className={`relative w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
-                        errors.name ? "border-rose-500/50 focus:border-rose-500" : ""
-                      }`}
-                    />
-                  </div>
+                  <Input
+                    id={nameId}
+                    {...register("name")}
+                    placeholder="Digite o nome do produto"
+                    className={`w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
+                      errors.name ? "border-rose-500/50 focus:border-rose-500" : ""
+                    }`}
+                  />
                   {errors.name && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
@@ -203,17 +200,14 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                   <Label htmlFor={categoryId} className="text-sm font-medium text-foreground/80">
                     Categoria *
                   </Label>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Input
-                      id={categoryId}
-                      {...register("category")}
-                      placeholder="Ex: Eletrônicos, Roupas, etc."
-                      className={`relative w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
-                        errors.category ? "border-rose-500/50 focus:border-rose-500" : ""
-                      }`}
-                    />
-                  </div>
+                  <Input
+                    id={categoryId}
+                    {...register("category")}
+                    placeholder="Ex: Eletrônicos, Roupas, etc."
+                    className={`w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
+                      errors.category ? "border-rose-500/50 focus:border-rose-500" : ""
+                    }`}
+                  />
                   {errors.category && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
@@ -231,18 +225,15 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 <Label htmlFor={descriptionId} className="text-sm font-medium text-foreground/80">
                   Descrição *
                 </Label>
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <Textarea
-                    id={descriptionId}
-                    {...register("description")}
-                    placeholder="Descreva o produto detalhadamente"
-                    rows={3}
-                    className={`relative w-full rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none ${
-                      errors.description ? "border-rose-500/50 focus:border-rose-500" : ""
-                    }`}
-                  />
-                </div>
+                <Textarea
+                  id={descriptionId}
+                  {...register("description")}
+                  placeholder="Descreva o produto detalhadamente"
+                  rows={3}
+                  className={`w-full rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none ${
+                    errors.description ? "border-rose-500/50 focus:border-rose-500" : ""
+                  }`}
+                />
                 {errors.description && (
                   <motion.p
                     initial={{ opacity: 0, y: -10 }}
@@ -260,20 +251,17 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                   <Label htmlFor={priceId} className="text-sm font-medium text-foreground/80">
                     Preço (R$) *
                   </Label>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Input
-                      id={priceId}
-                      type="number"
-                      step="0.01"
-                      min="0"
-                      {...register("price", { valueAsNumber: true })}
-                      placeholder="0.00"
-                      className={`relative w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
-                        errors.price ? "border-rose-500/50 focus:border-rose-500" : ""
-                      }`}
-                    />
-                  </div>
+                  <Input
+                    id={priceId}
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    {...register("price", { valueAsNumber: true })}
+                    placeholder="0.00"
+                    className={`w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
+                      errors.price ? "border-rose-500/50 focus:border-rose-500" : ""
+                    }`}
+                  />
                   {errors.price && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
@@ -290,19 +278,16 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                   <Label htmlFor={quantityId} className="text-sm font-medium text-foreground/80">
                     Quantidade em Estoque *
                   </Label>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Input
-                      id={quantityId}
-                      type="number"
-                      min="0"
-                      {...register("quantity", { valueAsNumber: true })}
-                      placeholder="0"
-                      className={`relative w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
-                        errors.quantity ? "border-rose-500/50 focus:border-rose-500" : ""
-                      }`}
-                    />
-                  </div>
+                  <Input
+                    id={quantityId}
+                    type="number"
+                    min="0"
+                    {...register("quantity", { valueAsNumber: true })}
+                    placeholder="0"
+                    className={`w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
+                      errors.quantity ? "border-rose-500/50 focus:border-rose-500" : ""
+                    }`}
+                  />
                   {errors.quantity && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
@@ -320,18 +305,15 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 <Label htmlFor={imageUrlId} className="text-sm font-medium text-foreground/80">
                   URL da Imagem *
                 </Label>
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <Input
-                    id={imageUrlId}
-                    type="url"
-                    {...register("imageUrl")}
-                    placeholder="https://exemplo.com/imagem.jpg"
-                    className={`relative w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
-                      errors.imageUrl ? "border-rose-500/50 focus:border-rose-500" : ""
-                    }`}
-                  />
-                </div>
+                <Input
+                  id={imageUrlId}
+                  type="url"
+                  {...register("imageUrl")}
+                  placeholder="https://exemplo.com/imagem.jpg"
+                  className={`w-full h-11 rounded-xl border-white/20 bg-white/5 backdrop-blur-sm focus:border-primary/50 focus:bg-white/10 transition-all duration-300 ${
+                    errors.imageUrl ? "border-rose-500/50 focus:border-rose-500" : ""
+                  }`}
+                />
                 {errors.imageUrl && (
                   <motion.p
                     initial={{ opacity: 0, y: -10 }}
@@ -345,36 +327,32 @@ export function ProductForm({ product, mode }: ProductFormProps) {
               </motion.div>
 
               <motion.div variants={fieldVariants} className="flex justify-end gap-3 pt-6">
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => setIsOpen(false)}
-                    className="h-11 px-6 rounded-xl border-white/20 bg-white/5 hover:bg-white/10 text-foreground/80"
-                  >
-                    Cancelar
-                  </Button>
-                </motion.div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setIsOpen(false)}
+                  className="h-11 px-6 rounded-xl border-white/20 bg-white/5 hover:bg-white/10 text-foreground/80"
+                >
+                  Cancelar
+                </Button>
 
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="h-11 px-6 rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    {isSubmitting ? (
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                      />
-                    ) : mode === "create" ? (
-                      "Cadastrar"
-                    ) : (
-                      "Atualizar"
-                    )}
-                  </Button>
-                </motion.div>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="h-11 px-6 rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {isSubmitting ? (
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                    />
+                  ) : mode === "create" ? (
+                    "Cadastrar"
+                  ) : (
+                    "Atualizar"
+                  )}
+                </Button>
               </motion.div>
             </motion.form>
           </DialogContent>
