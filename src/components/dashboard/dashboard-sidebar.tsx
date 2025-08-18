@@ -5,14 +5,12 @@ import {
   BarChart3,
   FileText,
   LayoutDashboard,
-  Menu,
   Package,
   Settings,
   ShoppingCart,
   TrendingUp,
   Users,
 } from "lucide-react"
-import { useState } from "react"
 import { SymbolLogo } from "../SymbolLogo"
 import { Button } from "../ui/button"
 import { SidebarProvider, SidebarTrigger } from "../ui/sidebar"
@@ -82,23 +80,21 @@ interface DashboardSidebarProps {
 }
 
 export function DashboardSidebar({ children }: DashboardSidebarProps) {
-  const [isOpen, setIsOpen] = useState(true)
-
   return (
     <SidebarProvider defaultOpen={true}>
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex h-screen overflow-hidden w-full">
         <motion.aside
-          initial={{ width: isOpen ? 280 : 80 }}
-          animate={{ width: isOpen ? 280 : 80 }}
+          initial={{ width: 280 }}
+          animate={{ width: 280 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="relative bg-background/80 backdrop-blur-xl border-r border-white/10 flex-shrink-0"
+          className="relative bg-background/80 backdrop-blur-xl border-r border-black/10 flex-shrink-0"
         >
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex items-center justify-between p-4 border-b border-white/10"
+            className="flex items-center p-4 border-b border-white/10"
           >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -106,42 +102,20 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="flex items-center gap-3"
             >
-              {isOpen ? (
-                <SymbolLogo width={40} height={40} />
-              ) : (
-                <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-gradient-to-br from-white to-white/80 rounded-lg" />
-                  </div>
-                  <div className="absolute -inset-1 bg-gradient-to-br from-primary to-primary/60 rounded-xl blur opacity-30 animate-pulse" />
-                </div>
-              )}
+              <SymbolLogo width={40} height={40} />
 
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: "auto" }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="min-w-0"
-                >
-                  <h2 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent truncate">
-                    NexusFlow
-                  </h2>
-                  <p className="text-xs text-muted-foreground/60 truncate">Dashboard v1.0</p>
-                </motion.div>
-              )}
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: "auto" }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="min-w-0"
+              >
+                <h2 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent truncate">
+                  NexusFlow
+                </h2>
+                <p className="text-xs text-muted-foreground/60 truncate">Dashboard v1.0</p>
+              </motion.div>
             </motion.div>
-
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="w-8 h-8 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 hover:from-primary/20 hover:to-primary/10"
-              aria-label={isOpen ? "Recolher sidebar" : "Expandir sidebar"}
-              aria-expanded={isOpen}
-            >
-              <Menu className="h-4 w-4 text-primary" />
-            </Button>
           </motion.div>
 
           <nav className="p-4 flex-1 overflow-y-auto" aria-label="Menu de navegação">
@@ -166,28 +140,26 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
                         aria-label={`Navegar para ${item.title}`}
                       >
                         <motion.div
-                          whileHover={{ rotate: 360, scale: 1.1 }}
+                          whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.6, ease: "easeInOut" }}
                           className={`p-2 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}
                           aria-hidden="true"
                         >
                           <Icon className="h-4 w-4 text-white" />
                         </motion.div>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ opacity: 0, width: 0 }}
-                            animate={{ opacity: 1, width: "auto" }}
-                            transition={{ delay: 0.3, duration: 0.5 }}
-                            className="flex items-center justify-between flex-1 min-w-0"
-                          >
-                            <span className="truncate">{item.title}</span>
-                            {item.badge && (
-                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full">
-                                {item.badge}
-                              </span>
-                            )}
-                          </motion.div>
-                        )}
+                        <motion.div
+                          initial={{ opacity: 0, width: 0 }}
+                          animate={{ opacity: 1, width: "auto" }}
+                          transition={{ delay: 0.3, duration: 0.5 }}
+                          className="flex items-center justify-between flex-1 min-w-0"
+                        >
+                          <span className="truncate">{item.title}</span>
+                          {item.badge && (
+                            <span className="px-2 py-1 text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full">
+                              {item.badge}
+                            </span>
+                          )}
+                        </motion.div>
                       </a>
                     </Button>
                   </motion.div>
@@ -202,7 +174,6 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
     </SidebarProvider>
   )
 }
-
 export function DashboardSidebarTrigger() {
   return (
     <SidebarTrigger

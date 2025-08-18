@@ -5,7 +5,6 @@ import { Bell, Search, User } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
-import { DashboardSidebarTrigger } from "./dashboard-sidebar"
 
 export function DashboardHeader() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -23,10 +22,12 @@ export function DashboardHeader() {
       className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-16 items-center">
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-2 md:hidden">
-          <DashboardSidebarTrigger />
-        </div>
+        {/* Sidebar Toggle Button */}
+        {/* <SidebarTrigger className="w-9 h-9 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 border border-border/50 hover:from-muted/70 hover:to-muted/50 hover:border-border/70 transition-all duration-200 hover:scale-105">
+          <div className="flex items-center justify-center w-full h-full">
+            <div className="w-4 h-4 border-2 border-foreground/70 rounded-sm" />
+          </div>
+        </SidebarTrigger> */}
 
         <div className="flex-1 flex items-center justify-between">
           {/* Search Bar */}
