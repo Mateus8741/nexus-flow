@@ -1,9 +1,11 @@
 "use client"
 
 import { BarChart3, Clock, MessageSquare, Shield, Workflow, Zap } from "lucide-react"
+import { useId } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 export function Services() {
+  const id = useId()
   const services = [
     {
       id: "whatsapp",
@@ -73,7 +75,7 @@ export function Services() {
   ]
 
   return (
-    <section id="services" className="py-32 bg-white">
+    <section id={id} className="py-32 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-brand/20 to-orange-100 rounded-full px-6 py-3 mb-8">
@@ -112,8 +114,8 @@ export function Services() {
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
+                  {service.features.map(feature => (
+                    <div key={feature} className="flex items-center gap-3">
                       <div
                         className={`w-2 h-2 bg-gradient-to-r ${service.gradient} rounded-full`}
                       ></div>

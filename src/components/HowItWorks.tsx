@@ -12,9 +12,11 @@ import {
   Workflow,
   Zap,
 } from "lucide-react"
+import { useId } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
 
 export function HowItWorks() {
+  const id = useId()
   const steps = [
     {
       id: "setup",
@@ -65,7 +67,7 @@ export function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="py-32 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section id={id} className="py-32 bg-gradient-to-br from-gray-50 to-orange-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-brand/20 to-orange-100 rounded-full px-6 py-3 mb-8">
@@ -111,8 +113,8 @@ export function HowItWorks() {
 
                 <CardContent className="pt-0">
                   <div className="space-y-3">
-                    {step.details.map((detail, detailIndex) => (
-                      <div key={detailIndex} className="flex items-center gap-3">
+                    {step.details.map(detail => (
+                      <div key={detail} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-gray-700 font-medium text-sm">{detail}</span>
                       </div>
@@ -162,7 +164,10 @@ export function HowItWorks() {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Junte-se a centenas de empresas que já transformaram suas vendas com a NexusFlow
             </p>
-            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <button
+              type="button"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            >
               Começar Agora
               <ArrowRight className="w-5 h-5" />
             </button>

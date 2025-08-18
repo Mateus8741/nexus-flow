@@ -1,6 +1,6 @@
 "use client"
 
-import { Menu, MessageSquare, X } from "lucide-react"
+import { Menu, MessageSquare, Sparkles, X } from "lucide-react"
 import { useState } from "react"
 import { Logo } from "./Logo"
 import { Button } from "./ui/button"
@@ -12,6 +12,7 @@ export function Header() {
     { name: "Serviços", href: "#services" },
     { name: "Como Funciona", href: "#how-it-works" },
     { name: "Contato", href: "#contact" },
+    { name: "Dashboard", href: "/dashboard", target: "_blank" },
   ]
 
   return (
@@ -23,16 +24,52 @@ export function Header() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-12">
-            {menuItems.map(item => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-orange-brand transition-all duration-300 font-medium text-lg relative group"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-brand to-orange-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {menuItems.map(item =>
+              item.name === "Dashboard" ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target={item.target}
+                  className="relative group overflow-hidden bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 active:scale-95"
+                  style={{
+                    backgroundSize: "200% 200%",
+                    animation: "gradient-shift 3s ease infinite",
+                  }}
+                >
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+                  <div className="absolute inset-0 overflow-hidden rounded-xl">
+                    <div className="absolute top-1 left-2 w-1 h-1 bg-yellow-300 rounded-full animate-pulse opacity-70"></div>
+                    <div
+                      className="absolute top-2 right-3 w-1 h-1 bg-yellow-200 rounded-full animate-pulse opacity-60"
+                      style={{ animationDelay: "0.5s" }}
+                    ></div>
+                    <div
+                      className="absolute bottom-1 left-4 w-1 h-1 bg-orange-200 rounded-full animate-pulse opacity-80"
+                      style={{ animationDelay: "1s" }}
+                    ></div>
+                  </div>
+
+                  <div className="relative z-10 flex items-center justify-center h-full">
+                    <span className="relative">
+                      {item.name}
+                      <Sparkles className="absolute -top-1 -right-4 w-3 h-3 text-yellow-300 opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-300" />
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-400/20 via-orange-500/20 to-orange-600/20 blur-lg group-hover:blur-xl transition-all duration-500 animate-pulse"></div>
+                </a>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-orange-brand transition-all duration-300 font-medium text-lg relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-brand to-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )
+            )}
           </nav>
 
           <div className="hidden md:flex">
@@ -68,18 +105,53 @@ export function Header() {
                   {item.name}
                 </a>
               ))}
-              <Button
-                variant="cta"
-                size="lg"
-                className="mt-4 w-full bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white py-3 rounded-2xl font-semibold shadow-xl"
+              <button
+                type="button"
+                className="relative group overflow-hidden bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 transform hover:scale-105 active:scale-95 w-full"
+                style={{
+                  backgroundSize: "200% 200%",
+                  animation: "gradient-shift 3s ease infinite",
+                }}
               >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Falar Conosco
-              </Button>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+                <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                  <div className="absolute top-2 left-4 w-1 h-1 bg-yellow-300 rounded-full animate-pulse opacity-70"></div>
+                  <div
+                    className="absolute top-4 right-6 w-1.5 h-1.5 bg-yellow-200 rounded-full animate-pulse opacity-60"
+                    style={{ animationDelay: "0.5s" }}
+                  ></div>
+                  <div
+                    className="absolute bottom-3 left-8 w-1 h-1 bg-orange-200 rounded-full animate-pulse opacity-80"
+                    style={{ animationDelay: "1s" }}
+                  ></div>
+                </div>
+
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 p-[2px] group-hover:from-yellow-400 group-hover:via-orange-400 group-hover:to-orange-500 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 rounded-xl h-full w-full flex items-center justify-center">
+                    <div className="flex items-center">
+                      <MessageSquare className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                      <span className="relative">
+                        Falar Conosco
+                        <Sparkles className="absolute -top-2 -right-6 w-4 h-4 text-yellow-300 opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-300" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-400/20 via-orange-500/20 to-orange-600/20 blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse"></div>
+              </button>
             </nav>
           </div>
         )}
       </div>
+
+      <style jsx>{`
+          @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+          }
+        `}</style>
     </header>
   )
 }

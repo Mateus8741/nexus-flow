@@ -1,14 +1,16 @@
 "use client"
 
 import { Clock, Mail, MessageSquare, Send, Shield, Users, Zap } from "lucide-react"
+import { useId } from "react"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 
 export function Contact() {
+  const id = useId()
   return (
-    <section id="contact" className="py-32 bg-white">
+    <section id={id} className="py-32 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-brand/20 to-orange-100 rounded-full px-6 py-3 mb-8">
@@ -46,7 +48,7 @@ export function Contact() {
                     Nome Completo
                   </label>
                   <Input
-                    id="name"
+                    id={useId()}
                     placeholder="Seu nome completo"
                     className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
@@ -56,7 +58,7 @@ export function Contact() {
                     Email
                   </label>
                   <Input
-                    id="email"
+                    id={useId()}
                     type="email"
                     placeholder="seu@email.com"
                     className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
@@ -70,7 +72,7 @@ export function Contact() {
                     Telefone
                   </label>
                   <Input
-                    id="phone"
+                    id={useId()}
                     placeholder="(11) 99999-9999"
                     className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
@@ -80,7 +82,7 @@ export function Contact() {
                     Empresa
                   </label>
                   <Input
-                    id="company"
+                    id={useId()}
                     placeholder="Nome da sua empresa"
                     className="h-12 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg"
                   />
@@ -92,7 +94,7 @@ export function Contact() {
                   Mensagem
                 </label>
                 <Textarea
-                  id="message"
+                  id={useId()}
                   placeholder="Conte-nos sobre seu negócio e como podemos ajudar a automatizar suas vendas..."
                   className="min-h-32 border-2 border-gray-200 rounded-xl focus:border-orange-brand focus:ring-0 transition-all duration-300 text-lg resize-none"
                 />
