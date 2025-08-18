@@ -1,20 +1,20 @@
 "use client"
 
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import {
   BarChart3,
   FileText,
   LayoutDashboard,
+  Menu,
   Package,
   Settings,
   ShoppingCart,
+  Sparkles,
   TrendingUp,
   Users,
 } from "lucide-react"
 import { useState } from "react"
-import { cn } from "../../lib/utils"
 import { Button } from "../ui/button"
-import { ScrollArea } from "../ui/scroll-area"
 
 interface SidebarItem {
   title: string
@@ -77,197 +77,139 @@ const sidebarItems: SidebarItem[] = [
 ]
 
 interface DashboardSidebarProps {
-  isOpen: boolean
-  onClose: () => void
+  children: React.ReactNode
 }
 
-const sidebarVariants = {
-  closed: {
-    x: "-100%",
-    opacity: 0,
-    transition: {
-      type: "spring" as const,
-      stiffness: 300,
-      damping: 30,
-    },
-  },
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring" as const,
-      stiffness: 300,
-      damping: 30,
-    },
-  },
-}
-
-const itemVariants = {
-  closed: { x: -20, opacity: 0 },
-  open: (i: number) => ({
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: i * 0.1,
-      type: "spring" as const,
-      stiffness: 300,
-      damping: 30,
-    },
-  }),
-}
-
-export function DashboardSidebar({ isOpen, onClose }: DashboardSidebarProps) {
-  const [activeItem, setActiveItem] = useState("/dashboard")
-
-  const handleItemClick = (href: string) => {
-    setActiveItem(href)
-    console.log("Navegando para:", href)
-  }
+export function DashboardSidebar({ children }: DashboardSidebarProps) {
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <>
-      {/* Overlay para mobile */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.button
-            type="button"
-            className="fixed inset-0 bg-black/50 z-40 md:hidden"
-            onClick={onClose}
-            onKeyDown={e => {
-              if (e.key === "Escape") {
-                onClose()
-              }
-            }}
-            aria-label="Fechar menu"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </AnimatePresence>
-
+    <div className="flex h-screen">
       {/* Sidebar */}
       <motion.aside
-        variants={sidebarVariants}
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        className="fixed left-0 top-0 z-50 h-full w-72 bg-background/80 backdrop-blur-xl border-r border-white/10 shadow-2xl"
+        initial={{ width: isOpen ? 280 : 80 }}
+        animate={{ width: isOpen ? 280 : 80 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="relative bg-background/80 backdrop-blur-xl border-r border-white/10"
       >
-        {/* Header da Sidebar */}
+        {/* Header */}
         <motion.div
-          className="flex h-16 items-center border-b border-white/10 px-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
+          className="flex items-center justify-between p-4 border-b border-white/10"
         >
-          <div className="flex items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="flex items-center gap-3"
+          >
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center">
-                <LayoutDashboard className="h-6 w-6 text-white" />
+                <Sparkles className="h-6 w-6 text-white" />
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-br from-primary to-primary/60 rounded-2xl blur opacity-30 animate-pulse" />
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary to-primary/60 rounded-xl blur opacity-30 animate-pulse" />
             </div>
-            <h2 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              NexusFlow
-            </h2>
-          </div>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: "auto" }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="min-w-0"
+              >
+                <h2 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent truncate">
+                  NexusFlow
+                </h2>
+                <p className="text-xs text-muted-foreground/60 truncate">Dashboard v1.0</p>
+              </motion.div>
+            )}
+          </motion.div>
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-8 h-8 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 hover:from-primary/20 hover:to-primary/10"
+          >
+            <Menu className="h-4 w-4 text-primary" />
+          </Button>
         </motion.div>
 
-        {/* Menu Items */}
-        <ScrollArea className="h-[calc(100vh-4rem)]">
-          <div className="p-4 space-y-2">
+        {/* Navigation */}
+        <nav className="p-4">
+          <div className="space-y-2">
             {sidebarItems.map((item, index) => {
               const Icon = item.icon
-              const isActive = activeItem === item.href
-
               return (
                 <motion.div
                   key={item.href}
-                  custom={index}
-                  variants={itemVariants}
-                  initial="closed"
-                  animate="open"
-                  whileHover={{ x: 8 }}
-                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05, duration: 0.5 }}
                 >
                   <Button
                     variant="ghost"
-                    className={cn(
-                      "w-full justify-start gap-3 h-12 rounded-2xl transition-all duration-300 group relative overflow-hidden",
-                      isActive
-                        ? "bg-gradient-to-r from-primary/20 to-primary/10 border border-primary/30 text-primary shadow-lg"
-                        : "hover:bg-white/5 border border-transparent hover:border-white/10"
-                    )}
-                    onClick={() => handleItemClick(item.href)}
+                    className="w-full justify-start gap-3 h-12 px-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
                   >
-                    {/* Background Gradient on Hover */}
-                    <div
-                      className={cn(
-                        "absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-                        `from-${item.gradient.split("-")[1]}-500/10 to-${item.gradient.split("-")[3]}-500/10`
-                      )}
-                    />
-
-                    {/* Icon */}
                     <motion.div
-                      className={cn(
-                        "relative z-10 p-2 rounded-xl transition-all duration-300",
-                        isActive
-                          ? "bg-gradient-to-br from-primary to-primary/60 shadow-lg"
-                          : `bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-100`
-                      )}
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6, ease: "easeInOut" }}
+                      className={`p-2 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}
                     >
-                      <Icon className="h-5 w-5 text-white" />
+                      <Icon className="h-4 w-4 text-white" />
                     </motion.div>
-
-                    {/* Text */}
-                    <span className="relative z-10 font-medium">{item.title}</span>
-
-                    {/* Badge */}
-                    {item.badge && (
-                      <motion.span
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
-                        className="relative z-10 ml-auto text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1 rounded-full font-medium"
-                      >
-                        {item.badge}
-                      </motion.span>
-                    )}
-
-                    {/* Active Indicator */}
-                    {isActive && (
+                    {isOpen && (
                       <motion.div
-                        layoutId="activeIndicator"
-                        className="absolute right-2 w-2 h-2 bg-gradient-to-r from-primary to-primary/60 rounded-full"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                      />
+                        initial={{ opacity: 0, width: 0 }}
+                        animate={{ opacity: 1, width: "auto" }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                        className="flex items-center justify-between flex-1 min-w-0"
+                      >
+                        <span className="truncate">{item.title}</span>
+                        {item.badge && (
+                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                      </motion.div>
                     )}
                   </Button>
                 </motion.div>
               )
             })}
           </div>
-        </ScrollArea>
+        </nav>
 
-        {/* Footer da sidebar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 bg-background/50 backdrop-blur-sm"
-        >
-          <div className="text-center">
+        {/* Footer */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 text-center"
+          >
             <div className="text-xs text-muted-foreground/60 mb-1">NexusFlow Dashboard</div>
-            <div className="text-xs text-muted-foreground/40">v1.0 • Modern & Fast</div>
-          </div>
-        </motion.div>
+            <div className="text-xs text-muted-foreground/40">Modern & Fast</div>
+          </motion.div>
+        )}
       </motion.aside>
-    </>
+
+      {/* Main Content */}
+      <div className="flex-1 overflow-hidden">{children}</div>
+    </div>
+  )
+}
+
+// Componente para o trigger da sidebar (botão de menu)
+export function DashboardSidebarTrigger() {
+  return (
+    <Button
+      variant="ghost"
+      size="sm"
+      className="h-10 w-10 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 hover:from-primary/20 hover:to-primary/10"
+    >
+      <Menu className="h-5 w-5 text-primary" />
+    </Button>
   )
 }

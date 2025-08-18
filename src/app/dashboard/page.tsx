@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState } from "react"
 import { ChartsSection } from "../../components/dashboard/charts-section"
 import { DashboardHeader } from "../../components/dashboard/dashboard-header"
 import { DashboardSidebar } from "../../components/dashboard/dashboard-sidebar"
@@ -37,29 +36,19 @@ const sectionVariants = {
 }
 
 export default function DashboardPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const { getProductStats } = useProducts()
   const stats = getProductStats()
 
-  const handleMenuToggle = () => {
-    setSidebarOpen(!sidebarOpen)
-  }
-
-  const handleSidebarClose = () => {
-    setSidebarOpen(false)
-  }
-
   return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20"
-    >
-      <DashboardHeader onMenuToggle={handleMenuToggle} />
-      <DashboardSidebar isOpen={sidebarOpen} onClose={handleSidebarClose} />
+    <DashboardSidebar>
+      <motion.div
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20"
+      >
+        <DashboardHeader />
 
-      <div className="md:ml-72">
         <main className="container mx-auto p-6 space-y-8">
           {/* Hero Section */}
           <motion.section variants={sectionVariants} className="text-center py-8">
@@ -130,7 +119,7 @@ export default function DashboardPage() {
             <ProductsTable />
           </motion.section>
         </main>
-      </div>
-    </motion.div>
+      </motion.div>
+    </DashboardSidebar>
   )
 }

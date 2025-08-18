@@ -1,16 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bell, Menu, Search, Sparkles, User } from "lucide-react"
+import { Bell, Search, Sparkles, User } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
+import { DashboardSidebarTrigger } from "./dashboard-sidebar"
 
-interface DashboardHeaderProps {
-  onMenuToggle?: () => void
-}
-
-export function DashboardHeader({ onMenuToggle }: DashboardHeaderProps) {
+export function DashboardHeader() {
   const [searchQuery, setSearchQuery] = useState("")
 
   const handleSearch = (e: React.FormEvent) => {
@@ -28,16 +25,7 @@ export function DashboardHeader({ onMenuToggle }: DashboardHeaderProps) {
       <div className="container flex h-16 items-center">
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onMenuToggle}
-              className="p-0 w-10 h-10 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 hover:from-primary/20 hover:to-primary/10"
-            >
-              <Menu className="h-5 w-5 text-primary" />
-            </Button>
-          </motion.div>
+          <DashboardSidebarTrigger />
         </div>
 
         <div className="flex-1 flex items-center justify-between">
@@ -59,7 +47,7 @@ export function DashboardHeader({ onMenuToggle }: DashboardHeaderProps) {
                 NexusFlow
               </h1>
             </motion.div>
-
+            
             {/* Search Bar */}
             <motion.form
               initial={{ opacity: 0, scale: 0.9 }}
@@ -92,9 +80,9 @@ export function DashboardHeader({ onMenuToggle }: DashboardHeaderProps) {
           >
             {/* Notifications */}
             <motion.div whileHover={{ scale: 1.05, rotate: 5 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="ghost"
-                size="sm"
+              <Button 
+                variant="ghost" 
+                size="sm" 
                 className="relative w-10 h-10 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 hover:from-amber-500/20 hover:to-orange-500/20"
               >
                 <Bell className="h-5 w-5 text-amber-500" />
@@ -106,11 +94,11 @@ export function DashboardHeader({ onMenuToggle }: DashboardHeaderProps) {
                 />
               </Button>
             </motion.div>
-
+            
             {/* User Profile */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="ghost"
+              <Button 
+                variant="ghost" 
                 size="sm"
                 className="w-10 h-10 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 hover:from-primary/20 hover:to-primary/10"
               >
