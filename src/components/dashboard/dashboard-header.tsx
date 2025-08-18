@@ -30,7 +30,6 @@ export function DashboardHeader() {
         </SidebarTrigger> */}
 
         <div className="flex-1 flex items-center justify-between">
-          {/* Search Bar */}
           <motion.form
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -52,14 +51,12 @@ export function DashboardHeader() {
             </div>
           </motion.form>
 
-          {/* Right Side Actions */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex items-center gap-3"
           >
-            {/* Notifications */}
             <motion.div whileHover={{ scale: 1.05, rotate: 5 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="ghost"
@@ -76,7 +73,6 @@ export function DashboardHeader() {
               </Button>
             </motion.div>
 
-            {/* User Profile */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="ghost"

@@ -171,7 +171,6 @@ export function ProductForm({ product, mode }: ProductFormProps) {
               onSubmit={handleSubmit(handleFormSubmit)}
               className="space-y-6"
             >
-              {/* Nome e Categoria */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div variants={fieldVariants} className="space-y-3">
                   <Label htmlFor={nameId} className="text-sm font-medium text-foreground/80">
@@ -228,7 +227,6 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 </motion.div>
               </div>
 
-              {/* Descrição */}
               <motion.div variants={fieldVariants} className="space-y-3">
                 <Label htmlFor={descriptionId} className="text-sm font-medium text-foreground/80">
                   Descrição *
@@ -257,7 +255,6 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 )}
               </motion.div>
 
-              {/* Preço e Quantidade */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div variants={fieldVariants} className="space-y-3">
                   <Label htmlFor={priceId} className="text-sm font-medium text-foreground/80">
@@ -319,7 +316,6 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 </motion.div>
               </div>
 
-              {/* URL da Imagem */}
               <motion.div variants={fieldVariants} className="space-y-3">
                 <Label htmlFor={imageUrlId} className="text-sm font-medium text-foreground/80">
                   URL da Imagem *
@@ -348,7 +344,6 @@ export function ProductForm({ product, mode }: ProductFormProps) {
                 )}
               </motion.div>
 
-              {/* Botões */}
               <motion.div variants={fieldVariants} className="flex justify-end gap-3 pt-6">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button

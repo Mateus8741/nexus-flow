@@ -123,21 +123,17 @@ export function StatsCards({ stats }: StatsCardsProps) {
               transition: { type: "spring", stiffness: 300, damping: 20 },
             }}
             whileTap={{ scale: 0.98 }}
-            className="group relative overflow-hidden"
+            className="group relative overflow-hidden rounded-xl"
           >
-            {/* Background Gradient */}
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${stat.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+              className={`absolute inset-0 bg-gradient-to-br ${stat.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl`}
             />
 
-            {/* Glass Card */}
-            <div className="relative glass-card p-6 h-full border border-white/10">
-              {/* Floating Icon Background */}
+            <div className="relative glass-card p-6 h-full border border-white/10 rounded-xl">
               <div
                 className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${stat.gradient} rounded-full opacity-10 blur-xl group-hover:opacity-20 transition-opacity duration-500`}
               />
 
-              {/* Header */}
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-sm font-medium text-muted-foreground/80 group-hover:text-muted-foreground transition-colors duration-300">
                   {stat.title}
@@ -151,7 +147,6 @@ export function StatsCards({ stats }: StatsCardsProps) {
                 </motion.div>
               </div>
 
-              {/* Value */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -161,12 +156,10 @@ export function StatsCards({ stats }: StatsCardsProps) {
                 {getValue(stat.value)}
               </motion.div>
 
-              {/* Description */}
               <p className="text-xs text-muted-foreground/70 group-hover:text-muted-foreground transition-colors duration-300">
                 {stat.description}
               </p>
 
-              {/* Hover Effect Line */}
               <motion.div
                 className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${stat.gradient} rounded-full`}
                 initial={{ width: 0 }}

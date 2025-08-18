@@ -77,7 +77,6 @@ const ProductContext = createContext<ProductContextType | undefined>(undefined)
 export function ProductProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(productReducer, initialState)
 
-  // Carregar produtos de exemplo na inicialização
   useEffect(() => {
     if (state.products.length === 0) {
       const productsWithIds = sampleProducts.map(product => ({

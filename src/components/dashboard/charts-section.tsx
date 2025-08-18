@@ -88,7 +88,6 @@ export function ChartsSection() {
   const blueGradientId = useId()
   const greenGradientId = useId()
 
-  // Dados para o gráfico de barras por categoria
   const categoryData = state.products.reduce(
     (acc, product) => {
       const existing = acc.find((item: { name: string }) => item.name === product.category)
@@ -107,7 +106,6 @@ export function ChartsSection() {
     [] as Array<{ name: string; value: number; totalValue: number }>
   )
 
-  // Dados para o gráfico de pizza de status de estoque
   const stockStatusData = [
     {
       name: "Em Estoque",
@@ -196,7 +194,6 @@ export function ChartsSection() {
       animate="visible"
       className="grid gap-6 md:grid-cols-2"
     >
-      {/* Gráfico de Barras */}
       <motion.div variants={cardVariants}>
         <Card className="glass-card border-white/20 overflow-hidden group">
           <CardHeader className="border-b border-white/10">
@@ -242,7 +239,6 @@ export function ChartsSection() {
                   radius={[4, 4, 0, 0]}
                 />
 
-                {/* Gradientes SVG */}
                 <defs>
                   <linearGradient id={blueGradientId} x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.8} />
@@ -259,7 +255,6 @@ export function ChartsSection() {
         </Card>
       </motion.div>
 
-      {/* Gráfico de Pizza */}
       <motion.div variants={cardVariants}>
         <Card className="glass-card border-white/20 overflow-hidden group">
           <CardHeader className="border-b border-white/10">
@@ -323,7 +318,6 @@ export function ChartsSection() {
               </PieChart>
             </ResponsiveContainer>
 
-            {/* Legendas */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

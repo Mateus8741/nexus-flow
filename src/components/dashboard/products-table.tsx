@@ -150,7 +150,6 @@ export function ProductsTable() {
         animate="visible"
         className="glass-card overflow-hidden"
       >
-        {/* Header da Tabela */}
         <div className="p-6 border-b border-white/10">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <motion.div
@@ -180,7 +179,6 @@ export function ProductsTable() {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-3"
             >
-              {/* Search Bar */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative">
@@ -194,13 +192,11 @@ export function ProductsTable() {
                 </div>
               </div>
 
-              {/* Novo Produto Button */}
               <ProductForm mode="create" />
             </motion.div>
           </div>
         </div>
 
-        {/* Tabela */}
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -317,7 +313,6 @@ export function ProductsTable() {
         </div>
       </motion.div>
 
-      {/* Dialog de Confirmação */}
       <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <DialogContent className="glass-card border-white/20">
           <DialogHeader>

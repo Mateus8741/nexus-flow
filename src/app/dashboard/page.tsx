@@ -51,7 +51,6 @@ export default function DashboardPage() {
 
         <main className="flex-1 w-full overflow-y-auto bg-gradient-to-br from-background via-background to-muted/20">
           <div className="w-full max-w-none px-6 py-8 space-y-8">
-            {/* Hero Section */}
             <motion.section variants={sectionVariants} className="text-center py-8">
               <motion.h1
                 initial={{ opacity: 0, y: -20 }}
@@ -72,7 +71,6 @@ export default function DashboardPage() {
               </motion.p>
             </motion.section>
 
-            {/* Seção de Estatísticas */}
             <motion.section variants={sectionVariants} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -88,7 +86,6 @@ export default function DashboardPage() {
               <StatsCards stats={stats} />
             </motion.section>
 
-            {/* Seção de Gráficos */}
             <motion.section variants={sectionVariants} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -104,7 +101,6 @@ export default function DashboardPage() {
               <ChartsSection />
             </motion.section>
 
-            {/* Seção de Produtos */}
             <motion.section variants={sectionVariants} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}

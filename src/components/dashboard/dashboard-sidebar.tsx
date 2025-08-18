@@ -89,7 +89,6 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="relative bg-background/80 backdrop-blur-xl border-r border-black/10 flex-shrink-0"
         >
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
