@@ -45,12 +45,12 @@ export default function DashboardPage() {
         variants={pageVariants}
         initial="initial"
         animate="animate"
-        className="flex flex-col h-full"
+        className="flex flex-col h-full w-full"
       >
         <DashboardHeader />
 
         <main className="flex-1 w-full overflow-y-auto bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="space-y-8">
+          <div className="w-full max-w-none px-6 py-8 space-y-8">
             {/* Hero Section */}
             <motion.section variants={sectionVariants} className="text-center py-8">
               <motion.h1

@@ -87,14 +87,12 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
   return (
     <SidebarProvider defaultOpen={true}>
       <div className="flex h-screen overflow-hidden">
-        {/* Sidebar */}
         <motion.aside
           initial={{ width: isOpen ? 280 : 80 }}
           animate={{ width: isOpen ? 280 : 80 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="relative bg-background/80 backdrop-blur-xl border-r border-white/10 flex-shrink-0"
         >
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,7 +138,6 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
             </Button>
           </motion.div>
 
-          {/* Navigation */}
           <nav className="p-4 flex-1 overflow-y-auto" aria-label="Menu de navegação">
             <div className="space-y-2">
               {sidebarItems.map((item, index) => {
@@ -154,7 +151,7 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
                   >
                     <Button
                       variant="ghost"
-                      className="w-full justify-start gap-3 h-12 px-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
+                      className="w-full justify-start gap-3 h-12 px-3 rounded-xl hover:bg-white/5 hover:scale-105 transition-all duration-300 group"
                       asChild
                     >
                       <a
@@ -192,29 +189,14 @@ export function DashboardSidebar({ children }: DashboardSidebarProps) {
               })}
             </div>
           </nav>
-
-          {/* Footer */}
-          {isOpen && (
-            <motion.footer
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              className="p-4 border-t border-white/10 text-center flex-shrink-0"
-            >
-              <div className="text-xs text-muted-foreground/60 mb-1">NexusFlow Dashboard</div>
-              <div className="text-xs text-muted-foreground/40">Modern & Fast</div>
-            </motion.footer>
-          )}
         </motion.aside>
 
-        {/* Main Content */}
         <div className="flex-1 flex flex-col min-w-0">{children}</div>
       </div>
     </SidebarProvider>
   )
 }
 
-// Componente para o trigger da sidebar (botão de menu)
 export function DashboardSidebarTrigger() {
   return (
     <SidebarTrigger
