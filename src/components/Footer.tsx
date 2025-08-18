@@ -153,7 +153,10 @@ export function Footer() {
                 placeholder="Seu melhor email"
                 className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-brand transition-all duration-300"
               />
-              <button className="px-8 py-4 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105">
+              <button
+                type="button"
+                className="px-8 py-4 bg-gradient-to-r from-orange-brand to-orange-500 hover:from-orange-brand hover:to-orange-600 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105"
+              >
                 Inscrever
               </button>
             </div>

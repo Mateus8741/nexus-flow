@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -26,16 +23,7 @@
     }
   },
   "files": {
-    "includes": [
-      "app/**/*.{ts,tsx,js,jsx}",
-      "components/**/*.{ts,tsx,js,jsx}",
-      "lib/**/*.{ts,tsx,js,jsx}",
-      "pages/**/*.{ts,tsx,js,jsx}",
-      "public/**/*.{ts,tsx,js,jsx}",
-      "src/**/*.{ts,tsx,js,jsx}",
-      "utils/**/*.{ts,tsx,js,jsx}",
-      "*.{ts,tsx,js,jsx,json,jsonc}"
-    ],
+    "includes": ["src/**/*.{ts,tsx,js,jsx}", "*.{ts,tsx,js,jsx,json,jsonc}"],
     "ignoreUnknown": true
   }
 }

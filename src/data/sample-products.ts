@@ -1,0 +1,68 @@
+import type { Product } from "../types/product"
+
+export const sampleProducts: Omit<Product, "id" | "createdAt" | "updatedAt">[] = [
+  {
+    name: "iPhone 15 Pro",
+    description: "Smartphone Apple com chip A17 Pro, câmera tripla de 48MP e design em titânio",
+    price: 8999.99,
+    quantity: 25,
+    imageUrl: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop",
+    category: "Eletrônicos",
+  },
+  {
+    name: "MacBook Air M2",
+    description: "Notebook Apple com chip M2, 13.6 polegadas e até 18 horas de bateria",
+    price: 12999.99,
+    quantity: 15,
+    imageUrl: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop",
+    category: "Eletrônicos",
+  },
+  {
+    name: "AirPods Pro",
+    description: "Fones de ouvido sem fio com cancelamento de ruído ativo e áudio espacial",
+    price: 2499.99,
+    quantity: 8,
+    imageUrl: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=400&fit=crop",
+    category: "Eletrônicos",
+  },
+  {
+    name: "Camiseta Básica",
+    description: "Camiseta 100% algodão, disponível em várias cores e tamanhos",
+    price: 89.99,
+    quantity: 150,
+    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+    category: "Vestuário",
+  },
+  {
+    name: "Tênis Esportivo",
+    description: "Tênis para corrida com tecnologia de amortecimento avançada",
+    price: 299.99,
+    quantity: 45,
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop",
+    category: "Calçados",
+  },
+  {
+    name: "Livro: O Poder do Hábito",
+    description: "Best-seller sobre como transformar hábitos para alcançar o sucesso",
+    price: 49.9,
+    quantity: 0,
+    imageUrl: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop",
+    category: "Livros",
+  },
+  {
+    name: "Café Especial",
+    description: "Café arábica de altitude, torrado artesanalmente",
+    price: 29.9,
+    quantity: 5,
+    imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop",
+    category: "Alimentos",
+  },
+  {
+    name: "Smart Watch",
+    description: "Relógio inteligente com monitor cardíaco e GPS integrado",
+    price: 899.99,
+    quantity: 12,
+    imageUrl: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    category: "Eletrônicos",
+  },
+]
