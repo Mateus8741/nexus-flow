@@ -10,11 +10,8 @@ WORKDIR /app
 # Copiar arquivos de dependências
 COPY package.json pnpm-lock.yaml ./
 
-# Instalar pnpm globalmente
-RUN npm install -g pnpm
-
-# Instalar dependências
-RUN pnpm install --frozen-lockfile
+# Instalar dependências usando npm com legacy-peer-deps
+RUN pnpm ci --legacy-peer-deps
 
 # Stage de build
 FROM base AS builder
@@ -36,8 +33,7 @@ FROM node:18-alpine AS runner
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Instalar pnpm
-RUN npm install -g pnpm
+# Não precisa instalar pnpm para produção
 
 # Copiar arquivos necessários do stage de build
 COPY --from=builder /app/public ./public
